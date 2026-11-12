@@ -5,19 +5,21 @@ user=""
 alerte=10
 
 user= int(input("Bonjour quel quantiter souhaiteer vous acheter ?"))
-quantiter_en_stock=quantiter_en_stock-user
 
-if quantiter_en_stock < alerte :
-    print("Alerte Ravitallier le stock")
+if  user==0:
+    print("Quantite Nulle")
 
 elif user > quantiter_en_stock:
     print("Produit pas disponible")
 
-    
-elif user==0:
-    print("Quantite Nulle")
 else:
     print("vous avez,encore assez de produit")
+
+if user > 0 and user <= quantiter_en_stock:
+    quantiter_en_stock = quantiter_en_stock - user
+
+if quantiter_en_stock < alerte:
+    print("Alerte : ravitailler le stock")
 
 print(quantiter_en_stock)
 print(price_unit*1.10)
